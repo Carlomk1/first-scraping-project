@@ -39,7 +39,7 @@ This repository showcases the implementation of the Geneva Airport analysis, ser
 This repository uses the following data sources for Geneva Airport:
 
 **Geneva Airport (GVA):**
-- Publicly available flight arrival schedules from [Geneva-Aiport] website.
+- Publicly available flight arrival schedules from [Geneva-Airport](https://www.gva.ch/de/Site/Passagers/Vols/Informations/Arrivees) website.
 - Data is scraped daily due to limited availability (24 hours).
 
 **Zurich Airport (ZRH):**
@@ -79,7 +79,7 @@ The first research question examines the punctuality of flights based on their d
 The analysis compared the mean delays of the top five departure airports with the lowest and highest average delays for Geneva and Zurich.
 
 <details>
-  <summary>View Screenshot</summary>
+  <summary>View results</summary>
   
   - **Geneva Airport**:
     - No clear patterns emerged among specific departure airports.
@@ -98,7 +98,7 @@ The analysis compared the mean delays of the top five departure airports with th
 This research question explores the quality and consistency of flight arrival data reported by Geneva and Zurich airports compared to CIRIUM FlightStats.
 
 <details>
-  <summary>View Screenshot</summary>
+  <summary>View results</summary>
   
   - **Systematic Discrepancies**:
     - **Geneva**:
@@ -124,7 +124,7 @@ This research question explores the quality and consistency of flight arrival da
 The third research question analyzes patterns in delays, focusing on variations by weekday and time of day.
 
 <details>
-  <summary>View Screenshot</summary>
+  <summary>View results</summary>
   
   - **Daily Patterns**:
     - Both Geneva and Zurich airports showed consistent delay distributions across weekdays, with no significant differences.
