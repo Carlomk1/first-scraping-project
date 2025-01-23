@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Carlomk1/swiss-real-estate-development">
-    <img src="Additional/data-aeroplane-adobestock.jpeg" alt="Logo" width="300" height="200">
+    <img src="Additional\data-aeroplane-adobestock.jpg" alt="Logo" width="300" height="200">
   </a>
 </div>
 
@@ -48,28 +48,29 @@ This repository uses the following data sources for Geneva Airport:
 **CIRIUM FlightStats API:**
 - A trusted data source providing flight arrival times at the runway and gate level.
 
-Data from April 1, 2024, to April 7, 2024, was collected for Geneva Airport and stored in structured formats for analysis.
+Data from April 1 2024 to April 7 2024 was collected for Geneva Airport and stored in structured formats for analysis.
 
 
 # Process Workflow
 The workflow implemented for Geneva Airport data includes the following steps:
 
-1. **Extract:**
+**1. Extract:**
 - Automated daily scraping of Geneva Airport’s flight arrival schedules using Selenium.
 - Data saved in JSON format, focusing on arrival times and flight numbers.
 
-2. **Transform:**
+**2. Transform:**
 - Data cleaning and transformation performed with Pandas, including:
     - Handling missing values.
     - Matching airline codes for standardization.
     - Restructuring JSON data into tabular formats.
 - The final dataset includes additional derived fields like gate delay and runway delay.
 
-![Process](Additional/Process-workflow.png)
 
-3. **Load:**
+**3. Load:**
 - The cleaned and processed data was stored in a MariaDB database for further analysis.
 - Visualizations and statistical summaries were generated from the final dataset.
+
+![Process](Additional/Process-workflow.png)
 
 # Results
 **1. Punctuality Based on Departure Airports**
@@ -87,7 +88,7 @@ The analysis compared the mean delays of the top five departure airports with th
     - U.S. destinations like Miami (MIA), Washington (IAD), and New York (JFK) had the lowest average delays, likely influenced by favorable jetstream conditions.
     - Dubai (DXB) exhibited significant delays, possibly due to weather or operational factors.
 
-  ![Punctuality by Departure Airports](images/punctuality_departure_airports.png)
+  ![Punctuality by Departure Airports](Additional\punctuality_departure_airports.png)
 
 </details>
 
@@ -113,7 +114,7 @@ This research question explores the quality and consistency of flight arrival da
       - Geneva Runway: 0.96 | Geneva Gate: 0.94
     - While generally reliable, Geneva's gate data showed slightly lower consistency.
   
-  ![Quality and Consistency](images/quality_consistency.png)
+  ![Quality and Consistency](Additional\quality_consistency.png)
 </details>
 
 
@@ -132,8 +133,8 @@ The third research question analyzes patterns in delays, focusing on variations 
     - Morning flights had the fewest delays, while delays increased steadily throughout the day at both airports.
     - Outliers occasionally influenced the averages, such as a notable early arrival in Zurich (19 minutes ahead of schedule).
   
-  ![Patterns per day in Delayed Flights](images/patterns_delayed_flights-daily.png)
-  ![Patterns per hour in Delayed Flights](images/patterns_delayed_flights-hourly.png)
+  ![Patterns per day in Delayed Flights](Additional\patterns_delayed_flights-daily.png)
+  ![Patterns per hour in Delayed Flights](Additional\patterns_delayed_flights-hourly.png)
 </details>
 
 
