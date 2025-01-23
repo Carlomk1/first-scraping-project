@@ -1,0 +1,54 @@
+Erläuterung zu Struktur & Inhalt der Abgabe
+***************************************************************************************************************************
+Von: Student C.S
+Modul: CIP
+Abgabedatum: 23.04.2024
+***************************************************************************************************************************
+Berechtigung
+Die in diesem Projekt verwendeten Daten wurden durch Web Scraping von der Website des Flughafens Genf gesammelt. 
+Das Scraping-Verfahren hält sich an die „robots.txt“-Datei der Website, um die Einhaltung der Richtlinien zu gewährleisten und nur auf öffentlich zugängliche Daten zuzugreifen.
+
+***************************************************************************************************************************
+Code
+
+Der Code des ETL-Prozesses ist in 4 einzelne py-Files unterteilt. Diese bestehen aus:
+
+Scraping_json_stage1.py: Scraped Daten von Ziel URL. Wird täglich ausgeführt.
+
+Manip_data_stage2.py: Verunreinigt Daten und fügt sie zusammen. Wird täglich ausgeführt.
+
+Final_prep_json_stage3.py: Bereinigt Daten und bereitet Upload in die Maria DB vor. Wird einmalig ausgeführt.
+
+Upload_MariaDB.py: Fügt die finale Version _stage3 in die Datenbank ein. Wird einmalig ausgeführt.
+
+
+Weitere Files sind:
+
+01_create_db_flight_arrivals_: Code zum Erstellen der Maria DB.
+
+Analyses_Question2: Beantwortung der Forschungsfrage 2
+
+Delay_querry_20240412: Beinhaltet alle Daten durch den Join aller Datenquelle nach dem Upload (Von Student C geliefert)
+
+***************************************************************************************************************************
+Data
+
+date_arrivals_Geneva_stage1.json: Je Datum der Scraping-Ausführung ist ein File mit den "Rohdaten" enthalten
+all_arrivals_Geneva_stage2.json: Alle stage1-files verunreinigt und zusammengefügt in einem File
+all_arrivals_Geneva_stage3.json: Finale Version, bereinigte und erweiterte Daten zum finalen Upload in Maria DB
+***************************************************************************************************************************
+Struktur zum Nachbauen in Pycharm:
+
+00_flightdata_project_CIP -->Folder
+Hier werden die 4 Hauptfiles zum ausführen des Scrapings/Datenmanipulation/Datenbereinigung/Upload Datenbank abgelegt. Es sind 3 Unterordner vorhanden.
+
+01_downloads --> Folder
+Beinhaltet alle JSON-Dateien mit den Originaldaten des Scrapingvorganges
+
+02_manip_data --> Folder
+Beinhaltet alle manipulierten (verunreinigten) Daten in einem JSON-File
+
+03_clean_data --> Folder
+Beinhaltet alle bereinigten Daten in einem JSON-File
+
+***************************************************************************************************************************

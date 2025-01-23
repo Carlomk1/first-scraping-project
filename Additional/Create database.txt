@@ -1,0 +1,34 @@
+# Verbindet sich als root-Benutzer mit der MariaDB-Datenbank, um administrative Aufgaben auszuführen.
+sudo mariadb -u root
+
+# Zeigt alle vorhandenen Datenbanken auf dem MariaDB-Server an.
+show databases;
+
+# Erstellt einen neuen Benutzer namens 'cip_user' auf dem lokalen Host mit dem Passwort 'cip_pw', falls dieser Benutzer noch nicht existiert.
+CREATE USER IF NOT EXISTS  cip_user@localhost IDENTIFIED BY 'cip_pw';
+
+# Erstellt eine neue Datenbank namens 'flight_arrivals'.
+CREATE DATABASE flight_arrivals;
+
+# Wählt die neu erstellte Datenbank 'flight_arrivals' aus, um Operationen darauf auszuführen.
+USE flight_arrivals;
+
+# Gewährt dem Benutzer 'cip_user' alle Rechte auf alle Tabellen der Datenbank 'flight_arrivals' und erlaubt ihm, diese Rechte weiterzugeben.
+GRANT ALL ON flight_arrivals.* TO cip_user@localhost WITH GRANT OPTION;
+
+# Aktualisiert die Berechtigungen, um sicherzustellen, dass alle vorherigen Grant-Befehle sofort wirksam werden.
+FLUSH PRIVILEGES;
+
+# Zeigt die aktuellen Berechtigungen für den Benutzer 'cip_user' an, um die korrekte Konfiguration zu überprüfen.
+SHOW GRANTS FOR 'cip_user'@localhost;
+
+# Erstellt eine Tabelle 'tbl_arrivals_geneva' in der Datenbank 'flight_arrivals' mit verschiedenen Spalten für die Flugdaten.
+# Als Primary Key wird hier eine 'id' erstellt. Dies bedeutet, dass jeder Datensatz in der Tabelle eine eindeutige id besitzt, die automatisch hochgezählt # wird (AUTO_INCREMENT), wenn neue Datensätze eingefügt werden.
+CREATE TABLE tbl_arrivals_geneva(id INT AUTO_INCREMENT PRIMARY KEY, flight_id VARCHAR(255), airline_name VARCHAR(255), date_arrival DATE, estimated_scheduled_arrival TIME, actual_arrival TIME, departure_destination VARCHAR(255), arrival_destination VARCHAR(255), status VARCHAR(255), delay_arrival FLOAT, code_share VARCHAR(255));
+
+# Fügt einen Testdatensatz in die Tabelle 'tbl_arrivals_geneva' ein.
+INSERT INTO tbl_arrivals_geneva (flight_id, airline_name, date_arrival, estimated_scheduled_arrival, actual_arrival, departure_destination, arrival_destination, status, delay_arrival, code_share) VALUES ('Test01', 'AirlineCarlo', '2024-04-03', '17:45:00', '17:50:00', 'Porto', 'Geneva', 'Gelandet', 5, '');
+
+# Ruft alle Datensätze aus der Tabelle 'tbl_arrivals_geneva' ab, um sie anzuzeigen.
+SELECT * FROM tbl_arrivals_geneva;
+
