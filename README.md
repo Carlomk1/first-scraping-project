@@ -88,7 +88,7 @@ The analysis compared the mean delays of the top five departure airports with th
     - U.S. destinations like Miami (MIA), Washington (IAD), and New York (JFK) had the lowest average delays, likely influenced by favorable jetstream conditions.
     - Dubai (DXB) exhibited significant delays, possibly due to weather or operational factors.
 
-  ![Punctuality by Departure Airports](Additional\punctuality_departure_airports.png)
+  ![Punctuality by Departure Airports](Additional/punctuality_departure_airports.png)
 
 </details>
 
@@ -114,7 +114,7 @@ This research question explores the quality and consistency of flight arrival da
       - Geneva Runway: 0.96 | Geneva Gate: 0.94
     - While generally reliable, Geneva's gate data showed slightly lower consistency.
   
-  ![Quality and Consistency](Additional\quality_consistency.png)
+  ![Quality and Consistency](Additional/quality_consistency.png)
 </details>
 
 
@@ -133,8 +133,8 @@ The third research question analyzes patterns in delays, focusing on variations 
     - Morning flights had the fewest delays, while delays increased steadily throughout the day at both airports.
     - Outliers occasionally influenced the averages, such as a notable early arrival in Zurich (19 minutes ahead of schedule).
   
-  ![Patterns per day in Delayed Flights](Additional\patterns_delayed_flights-daily.png)
-  ![Patterns per hour in Delayed Flights](Additional\patterns_delayed_flights-hourly.png)
+  ![Patterns per day in Delayed Flights](Additional/patterns_delayed_flights-daily.png)
+  ![Patterns per hour in Delayed Flights](Additional/patterns_delayed_flights-hourly.png)
 </details>
 
 
